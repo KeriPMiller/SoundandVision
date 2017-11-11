@@ -1,0 +1,10 @@
+html {
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  background-color: rgb(34, 82, 177);
+  color: white;
+  font-family: serif;
+}

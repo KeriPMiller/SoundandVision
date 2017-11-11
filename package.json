@@ -1,0 +1,16 @@
+{
+  "name": "soundandvision",
+  "version": "1.0.0",
+  "description": "sound drawings using p5.sound library ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-dev": "nodemon index.js"
+  },
+  "author": "keri p miller",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2",
+    "morgan": "^1.9.0"
+  }
+}
