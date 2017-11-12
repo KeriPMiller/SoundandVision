@@ -26,7 +26,8 @@ io.on('connection', socket => {
   socket.on('stranger', strangerVoice);
 
   function strangerVoice(data) {
-    // console.log(`Receiving: ${data}`);
+    socket.broadcast.emit('stranger', data);
+    // socket.emit('stranger', data);
   }
 });
 
