@@ -18,7 +18,10 @@ res.sendStatus(err.status|| 500).send(err.message || 'Internal server error')
 const io = socketIo(server);
 
 io.on('connection', socket => {
-  console.log(socket);
+  console.log('New Connection from ', socket.id);
+  socket.on('disconnect', () => {
+    console.log(`${socket.id} has disconnected`);
+  });
 });
 
 // morgan logging middleware
