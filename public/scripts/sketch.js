@@ -1,11 +1,16 @@
 // global variables
-let mic, amp;
+let mic,amp, socket;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
+
+  // setup socket
+  // socket = io.connect('http://localhost:3000');
+
   // get audio
   mic = new p5.AudioIn();
   mic.start();
+
   // get amplitude and set it to the mic
   amp = new p5.Amplitude();
   amp.setInput(mic);
@@ -16,7 +21,7 @@ function draw() {
   let micVal = Math.floor(micLevel * 100);
 
   // to make the bg col fluxuate fromblack to white on sound
-  let col = map(micVal, 0, 100, 0, 255);
+  let col = map(micVal, 0, 30, 0, 255);
   background(col);
 
   // blue ball with diagnal bottomright to top left movement

@@ -8,9 +8,14 @@
     "start-dev": "nodemon index.js"
   },
   "author": "keri p miller",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KeriPMiller/soundAndVision.git"
+  },
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.2",
-    "morgan": "^1.9.0"
+    "morgan": "^1.9.0",
+    "socket.io": "^2.0.4"
   }
 }
