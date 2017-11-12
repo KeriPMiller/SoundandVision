@@ -1,18 +1,22 @@
-var mic, amplitude;
+var mic, amplitude, capture;
 
 function setup() {
+  // audio
   createCanvas(windowWidth, 300);
   mic = new p5.AudioIn()
-  mic.start();
   amplitude = new p5.Amplitude()
+  mic.start();
+  // // video does not work the same time as AudioIn
+  // capture = createCapture();
+  // capture.size(windowWidth, 300);
 }
 
 function draw() {
   background(65);
   micLevel = mic.getLevel();
-
+  // image(capture, 0, 0, windowWidth, 300);
   noStroke();
-  fill(color(0, 100, 200))
+  fill(color(0, 100, 200));
   ellipse(
     constrain(0, width - micLevel * 5 * width, width),
     constrain(height - micLevel * height * 5, 0, height),
