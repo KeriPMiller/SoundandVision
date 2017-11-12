@@ -17,14 +17,32 @@ function setup() {
   amp.setInput(mic);
 }
 
+// capturing socket mic data
+function strangerSounds() {
+  let data = {
+    micVal: mic.getLevel(),
+    ampVal: amp.getLevel()
+  };
+  noStroke();
+  fill(color(255,0,0));
+  ellipse(width/2, Math.floor(data.micVal * 200), 20+data.ampVal*200, 20+data.ampVal*200);
+
+  socket.emit('stranger', data);
+
+}
+
+// drawing with host mic data
 function draw() {
   micLevel = mic.getLevel();
   let micVal = Math.floor(micLevel * 100);
-
   // to make the bg col fluxuate fromblack to white on sound
   let col = map(micVal, 0, 30, 0, 255);
   background(col);
 
+// if the mic is on send data to server
+  if(micLevel){
+    strangerSounds();
+  }
   // blue ball with diagnal bottomright to top left movement
   noStroke();
   fill(color(0, 100, 200));
