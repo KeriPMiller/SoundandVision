@@ -79,8 +79,8 @@ function draw() {
   fill(color(255,0,0));
   ellipse(width/2, height/2 , 20+micLevel*200, 20+amp.getLevel()*200);
 
-
+  let colPercent = map(micVal, 0, 10, 1, 100);
   // white line top moves from left to right at an angle
-  stroke(150);
+  stroke(color(`hsb(160, ${colPercent}%, 50%)`));
   line(round(micLevel * width), 0, round(micLevel * 100), height);
 }
