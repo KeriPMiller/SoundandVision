@@ -1,7 +1,6 @@
 // global variables
 let mic, amp, socket;
 
-
 function setup() {
   createCanvas(windowWidth, windowHeight);
 
