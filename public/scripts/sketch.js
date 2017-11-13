@@ -66,8 +66,16 @@ function draw() {
     strangerSounds();
   }
 
+  // color changing triangle
+  let randomCol = map(micVal, 0, 10, 50, 255);
+  console.log(randomCol, micVal);
+  let colorTri = color(0, 0, randomCol);
+  noStroke();
+  fill(colorTri);
+  triangle(100, 100, 320, 100, 310, 80);
 
   // red circle in middle
+  stroke(color('white'));
   fill(color(255,0,0));
   ellipse(width/2, height/2 , 20+micLevel*200, 20+amp.getLevel()*200);
 
