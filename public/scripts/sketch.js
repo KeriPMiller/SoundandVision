@@ -6,7 +6,7 @@ function setup() {
 
   // setup socket
   // put ip address in to connect
-  socket = io.connect('http://XXX.XXX.X.XXX:3000');
+  socket = io.connect('http://localhost:3000');
 
   // get mic data
   mic = new p5.AudioIn();
