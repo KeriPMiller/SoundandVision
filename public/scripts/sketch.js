@@ -22,7 +22,6 @@ function setup() {
   amp = new p5.Amplitude();
   amp.setInput(mic);
   socket.on('stranger', strangerDrawing);
-
 }
 
 // capturing socket mic data
