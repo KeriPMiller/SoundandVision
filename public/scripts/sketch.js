@@ -68,7 +68,7 @@ function draw() {
 
   // color changing triangle
   let randomCol = map(micVal, 0, 10, 50, 255);
-  console.log(randomCol, micVal);
+  // console.log(randomCol, micVal);
   let colorTri = color(0, 0, randomCol);
   noStroke();
   fill(colorTri);
