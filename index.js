@@ -23,6 +23,11 @@ io.on('connection', socket => {
     console.log(`${socket.id} has disconnected`);
   });
 
+  socket.on('sendVoice', boadcastVoice);
+  function broadcastVoice(audio) {
+    console.log('_____broadcasting_______')
+  }
+
   socket.on('stranger', strangerVoice);
 
   function strangerVoice(data) {

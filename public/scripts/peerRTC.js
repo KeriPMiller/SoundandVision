@@ -3,8 +3,8 @@ let audio;
 navigator.mediaDevices.getUserMedia({audio:true, video:false})
 .then(function (stream) {
   audio = stream;
-  socket.emit('sendVoice', audio);
-  return audio;})
+  return socket.emit('sendVoice', audio});
+})
 .catch( err => console.error(err))
 
 
