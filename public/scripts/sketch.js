@@ -1,6 +1,7 @@
 // global variables
 let mic, amp, socket;
 
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
 
@@ -8,7 +9,7 @@ function setup() {
   // put ip address in to connect
   socket = io.connect('http://XXX.XXX.X.XXX:3000');
 
-  // get audio
+  // get mic data
   mic = new p5.AudioIn();
   mic.start();
 
@@ -16,11 +17,11 @@ function setup() {
   // let col = map(micVal, 0, 30, 0, 255);
   let col = 60;
   background(col);
+
   // get amplitude and set it to the mic
   amp = new p5.Amplitude();
   amp.setInput(mic);
   socket.on('stranger', strangerDrawing);
-
 }
 
 // capturing socket mic data
